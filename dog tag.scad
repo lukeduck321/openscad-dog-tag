@@ -26,5 +26,34 @@ minkowski(){
 }
 
 
-rotate([180,0,0])
-finalcurve();
+module writename(){
+	linear_extrude(height=5)
+	text("Iris", font="Madimi_One", size=5);
+	
+}
+module writenumber(){
+	linear_extrude(height=5)
+	text("xxxx xxx xxx", font="Madimi_One", size=3);
+	
+}
+module patern(){
+	import("path/to/dogears-Extrude.stl");
+
+	}
+
+difference(){
+	rotate([180,0,0])
+	render()
+	finalcurve();
+	translate([-23,3,-2])
+	writename();
+	translate([-23,-2,-2])
+	writenumber();
+	translate([15,-8,-1])
+	scale([.15,.15,.15])
+	rotate([0,6,-10])
+	patern();
+}
+
+
+
